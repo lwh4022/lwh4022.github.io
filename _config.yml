@@ -13,7 +13,7 @@ title               : Maymanko's Blog
 tagline             : 'A Jekyll theme'
 description         : 'Blog for life, dev and Vietnam'
 url                 : /
-baseurl             : ""/""
+baseurl             : ""
 
 # Where things are
 source              : .
@@ -61,15 +61,11 @@ jekyll-archives:
   permalinks:
     category         : '/category/:name/'
 
-
 author:
   name              : 'Lee Won Hee'
   url               : https://twitter.com/
 
 paginate            : 5
-
-# Custom vars
-version             : 2.1.0
 
 github:
   repo              : https://github.com/lwh4022
