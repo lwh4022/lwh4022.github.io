@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %}
+      {{ page.title | escape }}
+      {% else %}
+      {{ site.title | escape }}
+      {% endif %}
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/images/favicon.ico">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+    {% for css in layout.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
+    {% for css in page.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/github-markdown.css">
+    {% seo title=false %}
+    <script type="text/javascript" src="{{site.baseurl}}/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/assets/js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav hide-on-large-only">
+        <div class="nav-wrapper" style="background-color: #000000; background-image: url('{{site.baseurl}}/assets/images/black-felt.png')">
+          <div class="container">
+            <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-target="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color: #000000; background-image: url('{{site.baseurl}}/assets/images/black-felt.png');">
+        <li>
+          <h4 class="white-text center-align" style="font-weight: bold;">{{site.title}}</h4>
+          <img class="circle z-depth-2 responsive-img" style="display:block; margin-left:auto; margin-right:auto; margin-top:20px; margin-bottom:20px; height:100px;" src="{{site.baseurl}}/assets/images/logo.jpeg"/>
+        </li>
+        {% for item in site.data.navigation.toc %}
+            <li>
+              <a class="waves-effect" href="{{site.baseurl}}{{item.url}}" style="color:white;font-size: 1.5em;">
+                <i class="material-icons" style="color:white;margin-right:16px;">{{ item.icon}}</i>
+                {{ item.title }}
+              </a>
+            </li>
+            <ul>
+              {% for entry in item.subfolderitems %}
+                <li>
+                  <a class="waves-effect" href="{{ entry.url }}" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                    {{ entry.page }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+        {% endfor %}
+        
+      </ul>
+    </header>
+    <main>
