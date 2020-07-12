@@ -1,4 +1,4 @@
 ---
-layout: archive
+layout: category
 title: Life
 ---
