@@ -46,12 +46,12 @@
 <loc>http://localhost:4000/category/vietnam/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/category/develop/</loc>
+<loc>http://localhost:4000/develop/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/category/msa/</loc>
+<loc>http://localhost:4000/msa/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/category/ddd/</loc>
+<loc>http://localhost:4000/ddd/</loc>
 </url>
 </urlset>
