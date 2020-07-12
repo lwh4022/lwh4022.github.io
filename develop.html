@@ -1,0 +1,11 @@
+---
+layout: default
+title: Develop
+---
+  <div class="markdown-body">
+    {% for develop in site.develops %}
+      <h1 style="text-align: center;margin-bottom:30px;">{{ develop.title }}</h2>
+      <p>{{ develop.content | markdownify }}</p>
+    {% endfor %}
+  </div>
+</ul>
