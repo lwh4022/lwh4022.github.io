@@ -5,10 +5,10 @@ toc:
     subfolderitems:
     - page: /DDD
       title: DDD
-      url: /DDD
+      url: /ddd
     - page: /MSA
       title: MSA
-      url: /MSA
+      url: /msa
     - page: Docker
       title: Docker
       url: /docker
@@ -23,7 +23,7 @@ toc:
       url: /electron
     - page: RabbitMQ
       title: RabbitMQ
-      url: /RabbitMQ
+      url: /rabbitmq
   - title: Life
     url: /life
     icon: edit

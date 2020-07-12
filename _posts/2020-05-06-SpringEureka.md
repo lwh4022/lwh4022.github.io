@@ -2,7 +2,7 @@
 layout: post
 title: Service Discovery with Spring Cloud and Eureka
 categories: [Develop, MSA]
-tag: [MSA]    
+tags: [MSA, Develop]    
 ---
 > 스프링 마이크로 서비스 코딩 공작소 참조
 
