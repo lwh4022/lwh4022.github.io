@@ -12,23 +12,27 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     
       
-        
-          <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="stylesheet" href="/assets/css/post.css">
       
-    
+      
+      
     <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="stylesheet" href="/assets/css/github-markdown.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Maymanko’s blog" />
+<meta property="og:title" content="Recovery Pattern" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<meta name="description" content="스프링 마이크로 서비스 코딩 공작소 참조" />
+<meta property="og:description" content="스프링 마이크로 서비스 코딩 공작소 참조" />
+<link rel="canonical" href="http://localhost:4000/develop/msa/2020/05/10/RecoverPattern/" />
+<meta property="og:url" content="http://localhost:4000/develop/msa/2020/05/10/RecoverPattern/" />
 <meta property="og:site_name" content="Maymanko’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-10T00:00:00+09:00" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","name":"Maymanko’s blog","headline":"Maymanko’s blog","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","datePublished":"2020-05-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/msa/2020/05/10/RecoverPattern/"},"url":"http://localhost:4000/develop/msa/2020/05/10/RecoverPattern/","description":"스프링 마이크로 서비스 코딩 공작소 참조","headline":"Recovery Pattern","dateModified":"2020-05-10T00:00:00+09:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
@@ -214,80 +218,88 @@
 
 
 <div class="container">
-  <div class="row">
+  <div id="post-info">
+  <h3>Recovery Pattern</h3>
   
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/ddd/2020/06/15/DDD_start/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title">DDD 시작하기</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.06.15
-          </p>
-          
-          <p></p>
-        </div>
-      </div>
-    </a>
-  </div>
-  
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/msa/2020/05/10/RecoverPattern/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title">Recovery Pattern</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.05.10
-          </p>
-          
-          <p></p>
-        </div>
-      </div>
-    </a>
-  </div>
-  
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/msa/2020/05/06/SpringEureka/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title">Service Discovery with Spring Cloud and Eureka</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.05.06
-          </p>
-          
-          <p></p>
-        </div>
-      </div>
-    </a>
-  </div>
-  
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12 markdown-body">
+    <blockquote>
+  <p>스프링 마이크로 서비스 코딩 공작소 참조</p>
+</blockquote>
 
-  <div class="col s12 center-align">
-    <ul class="pagination">
-      <li class="disabled">
-        
-        <a href="#!">
-        
-          <i class="material-icons">chevron_left</i>
-        </a>
-      </li>
-      
-      <li class="active teal">
-        <a href="#!">1</a>
-      
-      </li>
-      
-      <li class="disabled">
-        
-        <a href="#!">
-        
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-    </ul>
+<h2 id="서비스가-느려질-때-성능-저하를-감지하고-우회하는-것이-어려운-이유">서비스가 느려질 때 성능 저하를 감지하고 우회하는 것이 어려운 이유</h2>
+<ol>
+  <li>서비스 저하(degradtion)는 간헐적으로 발생하고 확산됨</li>
+  <li>원격 서비스 호출은 대개 동기식이며 오래걸리는 호출을 중단하지 않는다.</li>
+  <li>애플리케이션은 대개 부분적인 저하기 아닌 원격 자원의 완전한 장애를 처리하도로 설계</li>
+</ol>
+
+<h2 id="클라이언트-회복성-패턴">클라이언트 회복성 패턴</h2>
+<h3 id="1-목적">1. 목적</h3>
+<ul>
+  <li>원격 서비스가 에러를 던지거나 원격 자원의 접근에 실패할 떄 클라이언트 충돌을 막음
+    <h3 id="2-패턴">2. 패턴</h3>
+  </li>
+  <li>Client측 부하분산 : Service Client는 Service Discovery에서 조회한 Microservice endpoint caching</li>
+  <li>Fallback: 호출이 실패하면 실행 가능한 대안이 있는지 확인</li>
+  <li>Circuit Breaker: Service Client가 장애 중인 서비스를 반복적으로 호출하지 못하게 함</li>
+  <li>Bulkhead: 불량 Service가 Client의 모든 자원을 고갈시키지 않도록 Serivce Client가 수행하는 서비스 호출을 격리</li>
+</ul>
+
+<h2 id="circuit-breaker">Circuit Breaker</h2>
+<h3 id="기능">기능</h3>
+<ol>
+  <li>원격 서비스 호출 모니터링</li>
+  <li>호출이 오래 걸린다면 호출을 중단</li>
+  <li>호출이 필요한 만큼 실패하면 빨리 실패하게 만들고, 고장난 원격 자원은 더이상 호출되지 않도록 한다.</li>
+</ol>
+
+<h3 id="회로-차단시">회로 차단시</h3>
+<ol>
+  <li>현 서비스는 회로 차단기가 Timeout하기 전에 문제가 있다는 것을 즉시 앎</li>
+  <li>현 서비스는 완전히 실패하거나 대체 코드(Fallback) 사용하는 조치를 취하는 것 중에서 선택</li>
+  <li>원격 서비스를 호출하지 않으므로 원격 서비스에 복구할 여유가 생김</li>
+  <li>저하된 서비스를 간헐적으로 호출, 연속적으로 충분히 성공하면 회로 차단기가 재설정</li>
+</ol>
+
+<h3 id="핵심기능">핵심기능</h3>
+<ol>
+  <li>Fail Fast</li>
+  <li>Fail gracefully: Timeout과 빠른 실패 방법을 사용하는 회로 차단기 패턴으로 원만하게 실패하거나 사용의도로 수행하는 대체 메커니즘을 사용</li>
+  <li>Recover seemlessly: 요청 자원이 온라인 상태인지 주기적으로 확인</li>
+</ol>
+
+<h3 id="비고">비고</h3>
+<h4 id="hystrixcommand를-설정-없이-사용시">@HystrixCommand를 설정 없이 사용시</h4>
+<ol>
+  <li>모든 원격 서비스 호출에 동일한 스레드 풀 사용</li>
+  <li>일부 서비스 호출이 다른 서비스 호출보다 느려지는 상황이 발생하면 서비스 호출을 별도 스레드풀로 분리하면 것을 고려</li>
+</ol>
+
+<h2 id="fallback">Fallback</h2>
+<h3 id="구현방법">구현방법</h3>
+<ol>
+  <li>@HystrixCommand에 Fallback Method 속성을 추가(속성 : 메서드 이름)</li>
+  <li>Fallback Method 정의 (반드시 보호하려는 메서드와 같은 클래스에 존재)</li>
+  <li>Fallback 서비스에서 다른 분산 서비스를 호출한다면 @HystrixCommand로 Fallback을 감싸야 함</li>
+  <li>1차 Fallback 행동 방침을 겪게한 동일한 장애가 2차 Fallback 옵션에 영향을 줄 수 있음을 고려</li>
+</ol>
+
+<h3 id="기능-1">기능</h3>
+<ol>
+  <li>호출이 실패할 떄 예외를 발생시키지 않고, 서비스 소비자가 대체 경로를 실행해 다른 방법으로 작업을 수행</li>
+  <li>일반적으로 다른 데이터 소스에서 데이터를 찾거나 향후 처리를 위해 사용자 요청을 Queue에 입력하는 작업과 연관</li>
+  <li>사용자 호출에 무넺가 있다고 예외를 표시하지 않지만 나중에 해당 요청을 수행할 수 있다고 전달 받을 수 있음</li>
+</ol>
+
+<h2 id="bulkhead">Bulkhead</h2>
+<ol>
+  <li>원격 자원에 대한 호출을 자원별 스레드 풀로 분리 -&gt; 전체 애플리케이션 다운 위험 ↓</li>
+</ol>
+
+
   </div>
 </div>
 </div>

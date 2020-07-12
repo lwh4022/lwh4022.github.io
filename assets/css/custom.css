@@ -1,0 +1,7 @@
+img {
+    border-style: none;
+  }
+  
+img.post-image, img.page-img {
+    width: 100%;
+  }

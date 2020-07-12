@@ -1,12 +1,3 @@
-collections:
-  develops:
-    output: true
-  lifes:
-    output: true
-  vietnams:
-    output: true
-
-
 title: Maymanko's blog
 url: "https://lwh4022.github.io"
 baseurl: ""
@@ -19,7 +10,21 @@ exclude:
 sass:
   style: compressed
 future: true
+
+
+jekyll-archives:
+  enabled: 
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
   
 plugins:
-- jekyll-sitemap
-- jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-archives

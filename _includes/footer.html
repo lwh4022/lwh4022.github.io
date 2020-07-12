@@ -8,10 +8,10 @@
     </div>
     <div class="divider"></div>
     <div class="cat-index">
-      {% for cat in site.categories %}
-      {% capture test %}{{cat[0] | slice: 0}}{% endcapture %}
-      {% capture testup %}{{cat[0] | slice: 0 | upcase}}{% endcapture %}
-      <h4 id="{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{cat[0]}}</h4>
+      {% for category in site.categories %}
+      {% capture test %}{{category[0] | slice: 0}}{% endcapture %}
+      {% capture testup %}{{category[0] | slice: 0 | upcase}}{% endcapture %}
+      <h4 id="{{category[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{category[0]}}</h4>
       <ul class="cat-post">
         {% for post in cat[1] %}
         <a class="post-title" href="{{site.baseurl}}{{post.url}}" target="_blank">

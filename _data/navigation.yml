@@ -3,9 +3,27 @@ toc:
     url: /develop
     icon: code
     subfolderitems:
-    - page: DDD
-    - page: MSA
+    - page: /DDD
+      title: DDD
+      url: /DDD
+    - page: /MSA
+      title: MSA
+      url: /MSA
     - page: Docker
+      title: Docker
+      url: /docker
+    - page: React
+      title: React
+      url: /react
+    - page: Typescript
+      title: Typescript
+      url: /typescript
+    - page: Electron
+      title: Electron
+      url: /electron
+    - page: RabbitMQ
+      title: RabbitMQ
+      url: /RabbitMQ
   - title: Life
     url: /life
     icon: edit
