@@ -55,7 +55,7 @@
         
         {% for item in site.data.navigation.toc %}
           <li>
-            <a class="waves-effect" href="/category{{site.baseurl}}{{item.url}}" style="color:white;font-size: 1.5em;">
+            <a class="waves-effect" href="{{site.baseurl}}{{item.url}}" style="color:white;font-size: 1.5em;">
               <i class="material-icons" style="color:white;margin-right:16px;">{{ item.icon}}</i>
               {{ item.title }}
               {% assign cats_list = site.categories %}  
@@ -69,7 +69,7 @@
           <ul>
             {% for entry in item.subfolderitems %}
               <li>
-                <a class="waves-effect" href="/category{{item.url}}{{ entry.url }}" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="{{item.url}}{{ entry.url }}" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   {{ entry.title }}
                   {% for cat in cats_list %}
                     {% if cat[0] == entry.title %}

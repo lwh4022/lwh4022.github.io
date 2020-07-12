@@ -57,7 +57,7 @@
         
         
           <li>
-            <a class="waves-effect" href="/category/develop" style="color:white;font-size: 1.5em;">
+            <a class="waves-effect" href="/develop" style="color:white;font-size: 1.5em;">
               <i class="material-icons" style="color:white;margin-right:16px;">code</i>
               Develop
                 
@@ -75,7 +75,7 @@
           <ul>
             
               <li>
-                <a class="waves-effect" href="/category/develop/ddd" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/ddd" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   DDD
                   
                     
@@ -90,7 +90,7 @@
               </li>
             
               <li>
-                <a class="waves-effect" href="/category/develop/msa" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/msa" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   MSA
                   
                     
@@ -105,7 +105,7 @@
               </li>
             
               <li>
-                <a class="waves-effect" href="/category/develop/docker" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/docker" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   Docker
                   
                     
@@ -118,7 +118,7 @@
               </li>
             
               <li>
-                <a class="waves-effect" href="/category/develop/react" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/react" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   React
                   
                     
@@ -131,7 +131,7 @@
               </li>
             
               <li>
-                <a class="waves-effect" href="/category/develop/typescript" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/typescript" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   Typescript
                   
                     
@@ -144,7 +144,7 @@
               </li>
             
               <li>
-                <a class="waves-effect" href="/category/develop/electron" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/electron" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   Electron
                   
                     
@@ -157,7 +157,7 @@
               </li>
             
               <li>
-                <a class="waves-effect" href="/category/develop/rabbitmq" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                <a class="waves-effect" href="/develop/rabbitmq" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
                   RabbitMQ
                   
                     
@@ -172,7 +172,7 @@
           </ul>
         
           <li>
-            <a class="waves-effect" href="/category/life" style="color:white;font-size: 1.5em;">
+            <a class="waves-effect" href="/life" style="color:white;font-size: 1.5em;">
               <i class="material-icons" style="color:white;margin-right:16px;">edit</i>
               Life
                 
@@ -190,7 +190,7 @@
           </ul>
         
           <li>
-            <a class="waves-effect" href="/category/vietnam" style="color:white;font-size: 1.5em;">
+            <a class="waves-effect" href="/vietnam" style="color:white;font-size: 1.5em;">
               <i class="material-icons" style="color:white;margin-right:16px;">public</i>
               Vietnam
                 
