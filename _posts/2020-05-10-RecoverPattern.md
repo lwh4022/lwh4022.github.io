@@ -2,7 +2,7 @@
 layout: post
 title: Recovery Pattern
 category: [Develop, MSA]
-tags: [MSA]    
+tags: [MSA, Develop]    
 ---
 > 스프링 마이크로 서비스 코딩 공작소 참조
 
