@@ -43,3 +43,43 @@ export const configuredStore = (initialState?: RootState) => {
   return store;
 };
 ```
+
+#root파일에서 history객체 불러오기
+## Provider -> connectedRouter -> App 순
+```javascript
+const Root = ({ store, history }: Props) => (
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Routes />
+    </ConnectedRouter>
+  </Provider>
+);
+```
+
+#Redux-thunk로 push 가능
+```javascript
+import { push } from 'connected-react-router';
+
+const addArticleRequest = createAction(types.ADD_ARTICLE_REQUEST);
+const addArticleSuccess = createAction(types.ADD_ARTICLE_SUCCESS);
+const addArticleFailed = createAction(types.ADD_ARTICLE_FAILED);
+
+export const addArticle = (whereCollection,title,content,file) =>{
+    return (dispatch,getState) =>{
+        dispatch(addArticleRequest());
+
+        const state = getState();        
+        const userId = state.auth.user.uid;
+        const userDisplayName = state.auth.user.displayName;
+        const userProfileUrl = state.auth.user.photoURL;
+        //getState를 쓰면 현재 스토어의 스테이트를 알 수 있다. 
+        ArticleAPI.addArticle({whereCollection,title,userId,content,file,userDisplayName,userProfileUrl})
+        .then(()=>{
+            dispatch(addArticleSuccess());
+            dispatch(push(`/community/${whereCollection}`));
+        }).catch((error)=>{
+            dispatch(addArticleFailed(error));
+        })
+    }
+}
+```
