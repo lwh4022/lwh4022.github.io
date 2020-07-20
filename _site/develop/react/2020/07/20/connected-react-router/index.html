@@ -12,19 +12,27 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     
       
+        <link rel="stylesheet" href="/assets/css/post.css">
+      
+      
+      
     <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="stylesheet" href="/assets/css/github-markdown.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="DDD" />
+<meta property="og:title" content="connected-react-router" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/ddd/" />
-<meta property="og:url" content="http://localhost:4000/ddd/" />
+<meta name="description" content="Connected-react-router ‘#1" />
+<meta property="og:description" content="Connected-react-router ‘#1" />
+<link rel="canonical" href="http://localhost:4000/develop/react/2020/07/20/connected-react-router/" />
+<meta property="og:url" content="http://localhost:4000/develop/react/2020/07/20/connected-react-router/" />
 <meta property="og:site_name" content="Maymanko’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-20T00:00:00+09:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/ddd/","headline":"DDD","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","datePublished":"2020-07-20T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/react/2020/07/20/connected-react-router/"},"url":"http://localhost:4000/develop/react/2020/07/20/connected-react-router/","description":"Connected-react-router ‘#1","headline":"connected-react-router","dateModified":"2020-07-20T00:00:00+09:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
@@ -271,30 +279,53 @@
 
 
 <div class="container">
-  <!-- Begin List Posts
-================================================== -->
-<h4><span>DDD</span></h4>
-
-<div class="blog-grid-container">
-
-<div class="col s12" style="margin-left: auto; margin-right: auto;">
-  <a href="/develop/ddd/2020/06/15/DDD_start/" style="color:black;">
-    <div class="card hoverable">
-      <div class="card-content">
-        <span id="post-title" class="card-title" style="font-weight: bold;margin-bottom:2rem;">DDD 시작하기</span>
-        <p id="post-date">
-          <i class="material-icons">date_range</i>
-          2020.06.15
-        </p>
-        
-        <p></p>
-        
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#DDD</span>
-          
-      </div>
-    </div>
-  </a>
+  <div id="post-info">
+  <h3>connected-react-router</h3>
+  
 </div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12 markdown-body">
+    <blockquote>
+  <p>https://hokeydokey.tistory.com/m/74?category=783109 블로그를 참조했습니다.</p>
+</blockquote>
 
+<h1 id="목적">목적</h1>
+<p>history객체를 통해 Redux에서 주소를 변경 및 확인</p>
+
+<h1 id="readme-내용">readme 내용</h1>
+<ol>
+  <li>단방향 흐름을 통해 Redux에서 router로 상태 전송 (history -&gt; store -&gt; router -&gt; component)</li>
+  <li>react router 버전 v4, v5를 지원</li>
+  <li>함수형 component를 지원</li>
+  <li>redux-thunk나 redux-saga를 통해 history 객체 dispatch 가능</li>
+  <li>immutable.js를 지원</li>
+  <li>Typescript 지원</li>
+</ol>
+
+<h1 id="reduxjstoolkit에서-사용">@reduxjs/toolkit에서 사용</h1>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">configureStore</span><span class="p">,</span> <span class="nx">getDefaultMiddleware</span><span class="p">,</span> <span class="nx">Action</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@reduxjs/toolkit</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">createHashHistory</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">history</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">routerMiddleware</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">connected-react-router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">createHashHistory</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="nx">createRootReducer</span><span class="p">(</span><span class="nx">history</span><span class="p">);</span>
+<span class="k">export</span> <span class="nx">type</span> <span class="nx">RootState</span> <span class="o">=</span> <span class="nx">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">rootReducer</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">routerMiddleware</span><span class="p">(</span><span class="nx">history</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">middleware</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">getDefaultMiddleware</span><span class="p">(),</span> <span class="nx">router</span><span class="p">];</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">configuredStore</span> <span class="o">=</span> <span class="p">(</span><span class="nx">initialState</span><span class="p">?:</span> <span class="nx">RootState</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Create Store</span>
+  <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">({</span>
+    <span class="na">reducer</span><span class="p">:</span> <span class="nx">rootReducer</span><span class="p">,</span>
+    <span class="nx">middleware</span><span class="p">,</span>
+    <span class="na">preloadedState</span><span class="p">:</span> <span class="nx">initialState</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">store</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+  </div>
 </div>
 </div>

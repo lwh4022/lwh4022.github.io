@@ -24,6 +24,9 @@ toc:
     - page: RabbitMQ
       title: RabbitMQ
       url: /rabbitmq
+    - page: etc
+      title: Etc
+      url: /etc
   - title: Life
     url: /life
     icon: edit
