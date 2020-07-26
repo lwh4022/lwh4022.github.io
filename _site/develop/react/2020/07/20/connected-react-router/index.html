@@ -67,7 +67,7 @@
                 
               
                 
-                  <span style="font-size: 1.05rem;">(5)</span>
+                  <span style="font-size: 1.05rem;">(7)</span>
                 
               
                 
@@ -91,7 +91,7 @@
                     
                   
                     
-                      <span style="font-size: 1.05rem;">(1)</span>
+                      <span style="font-size: 1.05rem;">(2)</span>
                     
                   
                     
@@ -324,6 +324,44 @@
   <span class="p">});</span>
   <span class="k">return</span> <span class="nx">store</span><span class="p">;</span>
 <span class="p">};</span>
+</code></pre></div></div>
+
+<p>#root파일에서 history객체 불러오기</p>
+<h2 id="provider---connectedrouter---app-순">Provider -&gt; connectedRouter -&gt; App 순</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Root</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">store</span><span class="p">,</span> <span class="nx">history</span> <span class="p">}:</span> <span class="nx">Props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">ConnectedRouter</span> <span class="nx">history</span><span class="o">=</span><span class="p">{</span><span class="nx">history</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Routes</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/ConnectedRouter</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/Provider</span><span class="err">&gt;
+</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>#Redux-thunk로 push 가능</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">push</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">connected-react-router</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">addArticleRequest</span> <span class="o">=</span> <span class="nx">createAction</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">ADD_ARTICLE_REQUEST</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">addArticleSuccess</span> <span class="o">=</span> <span class="nx">createAction</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">ADD_ARTICLE_SUCCESS</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">addArticleFailed</span> <span class="o">=</span> <span class="nx">createAction</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">ADD_ARTICLE_FAILED</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">addArticle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">whereCollection</span><span class="p">,</span><span class="nx">title</span><span class="p">,</span><span class="nx">content</span><span class="p">,</span><span class="nx">file</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">dispatch</span><span class="p">,</span><span class="nx">getState</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
+        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addArticleRequest</span><span class="p">());</span>
+
+        <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="nx">getState</span><span class="p">();</span>        
+        <span class="kd">const</span> <span class="nx">userId</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">uid</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">userDisplayName</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">displayName</span><span class="p">;</span>
+        <span class="kd">const</span> <span class="nx">userProfileUrl</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">photoURL</span><span class="p">;</span>
+        <span class="c1">//getState를 쓰면 현재 스토어의 스테이트를 알 수 있다. </span>
+        <span class="nx">ArticleAPI</span><span class="p">.</span><span class="nx">addArticle</span><span class="p">({</span><span class="nx">whereCollection</span><span class="p">,</span><span class="nx">title</span><span class="p">,</span><span class="nx">userId</span><span class="p">,</span><span class="nx">content</span><span class="p">,</span><span class="nx">file</span><span class="p">,</span><span class="nx">userDisplayName</span><span class="p">,</span><span class="nx">userProfileUrl</span><span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(()</span><span class="o">=&gt;</span><span class="p">{</span>
+            <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addArticleSuccess</span><span class="p">());</span>
+            <span class="nx">dispatch</span><span class="p">(</span><span class="nx">push</span><span class="p">(</span><span class="s2">`/community/</span><span class="p">${</span><span class="nx">whereCollection</span><span class="p">}</span><span class="s2">`</span><span class="p">));</span>
+        <span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+            <span class="nx">dispatch</span><span class="p">(</span><span class="nx">addArticleFailed</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
   </div>
