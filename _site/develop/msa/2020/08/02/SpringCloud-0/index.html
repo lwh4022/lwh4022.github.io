@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Maymanko&#39;s blog
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+      
+        <link rel="stylesheet" href="/assets/css/post.css">
+      
+      
+      
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="스프링 클라우드" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="스프링 마이크로 서비스 코딩 공작소" />
+<meta property="og:description" content="스프링 마이크로 서비스 코딩 공작소" />
+<link rel="canonical" href="http://localhost:4000/develop/msa/2020/08/02/SpringCloud-0/" />
+<meta property="og:url" content="http://localhost:4000/develop/msa/2020/08/02/SpringCloud-0/" />
+<meta property="og:site_name" content="Maymanko’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-02T00:00:00+09:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","datePublished":"2020-08-02T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/msa/2020/08/02/SpringCloud-0/"},"url":"http://localhost:4000/develop/msa/2020/08/02/SpringCloud-0/","description":"스프링 마이크로 서비스 코딩 공작소","headline":"스프링 클라우드","dateModified":"2020-08-02T00:00:00+09:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+  </head>
+  
+  <body>
+    <header>
+      <nav class="top-nav hide-on-large-only">
+        <div class="nav-wrapper" style="background-color: #000000; background-image: url('/assets/images/black-felt.png')">
+          <div class="container">
+            <a class="page-title" href="/">Maymanko's blog</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-target="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color: #000000; background-image: url('/assets/images/black-felt.png');">
+        <li>
+          <h4 class="center-align" style="font-weight: bold;"><a class="white-text page-title" href="/">Maymanko's blog</a></h4>
+          <img class="circle z-depth-2 responsive-img" style="display:block; margin-left:auto; margin-right:auto; margin-top:20px; margin-bottom:20px; height:100px;" src="/assets/images/logo.jpeg"/>
+        </li>
+        
+        
+          <li>
+            <a class="waves-effect" href="/develop" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">code</i>
+              Develop
+                
+              
+                
+                  <span style="font-size: 1.05rem;">(10)</span>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a class="waves-effect" href="/develop/ddd" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  DDD
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(2)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/msa" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  MSA
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(3)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/docker" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Docker
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/react" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  React
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(1)</span>
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/typescript" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Typescript
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/electron" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Electron
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(1)</span>
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/rabbitmq" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  RabbitMQ
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/etc" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Etc
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+          </ul>
+        
+          <li>
+            <a class="waves-effect" href="/life" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">edit</i>
+              Life
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+          </ul>
+        
+          <li>
+            <a class="waves-effect" href="/vietnam" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">public</i>
+              Vietnam
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+          </ul>
+        
+      </ul>
+      
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h3>스프링 클라우드</h3>
+  
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12 markdown-body">
+    <blockquote>
+  <p>스프링 마이크로 서비스 코딩 공작소</p>
+</blockquote>
+
+<h1 id="목차">목차</h1>
+<h3 id="1장-spring-cloud-config-server">1장 Spring Cloud Config Server</h3>
+<h3 id="2장-service-discovery">2장 Service Discovery</h3>
+<h3 id="3장-client-recovery-pattern">3장 Client Recovery Pattern</h3>
+<h3 id="4장-service-routing">4장 Service Routing</h3>
+<h3 id="5장-msa-security">5장 MSA Security</h3>
+<h3 id="6장-spring-cloud-stream을-사용한-event-driven-architecture">6장 Spring Cloud Stream을 사용한 Event Driven Architecture</h3>
+<h3 id="7장-spring-cloud-slueth와-zipkins를-이용한-분산추적">7장 Spring Cloud Slueth와 Zipkins를 이용한 분산추적</h3>
+<h3 id="8장-publishing">8장 Publishing</h3>
+
+<hr />
+
+<h1 id="간단-요약">간단 요약</h1>
+
+<h2 id="1장-spring-cloud-config-server-1">1장 Spring Cloud Config Server</h2>
+<h4 id="1-spring-cloud-config-server를-사용한-applications-properties를-환경별로-설정-가능">1. Spring Cloud Config Server를 사용한 Application’s properties를 환경별로 설정 가능</h4>
+<h4 id="2-spring은-spring-profile을-사용해-spring-cloud-config-service에서-조회할-env-properties를-결정하고-서비스를-시작">2. Spring은 Spring Profile을 사용해 Spring Cloud Config Service에서 조회할 Env Properties를 결정하고 서비스를 시작</h4>
+<h4 id="3-spring-cloud-config-services는-file이나-git-기반의-application-저장소를-사용해-application-properties를-저장할-수-있다">3. Spring Cloud Config Services는 file이나 Git 기반의 Application 저장소를 사용해 Application Properties를 저장할 수 있다</h4>
+<h4 id="4-spring-cloud-config-service는-대칭-및-비대칭-암호화를-사용해-중요한-정보를-암호화-할-수-있음">4. Spring Cloud Config service는 대칭 및 비대칭 암호화를 사용해 중요한 정보를 암호화 할 수 있음</h4>
+
+<h2 id="2장-service-discovery-1">2장 Service Discovery</h2>
+<h4 id="1-service-discovery-pattern은-서비스의-물리적-위치를-추상화하는데-사용한다">1. Service Discovery Pattern은 서비스의 물리적 위치를 추상화하는데 사용한다</h4>
+<h4 id="2-eureka같은-service-discovery-engine은-service-client에-영향을-주지-않고-해당-환경의-서비스-인스턴스를-원할하게-추가ㆍ삭제할-수-있다">2. Eureka같은 Service Discovery Engine은 Service client에 영향을 주지 않고 해당 환경의 서비스 인스턴스를 원할하게 추가ㆍ삭제할 수 있다</h4>
+<h4 id="3-client측-부하-분산을-사용하면-서비스를-호출하는-client에서-물리적-위치를-캐싱해-더-나은-성능과-회복성을-제공할-수-있다">3. Client측 부하 분산을 사용하면 서비스를 호출하는 Client에서 물리적 위치를 캐싱해 더 나은 성능과 회복성을 제공할 수 있다</h4>
+<h4 id="4-eureka는-넷플릭스-프로젝트의-spring-cloud와-사용하면-쉽게-구축하고-구성할-수-있다">4. Eureka는 넷플릭스 프로젝트의 Spring Cloud와 사용하면 쉽게 구축하고 구성할 수 있다.</h4>
+<h4 id="5-스프링-클라우드와-넷플릭스-유레카-그리고-서비스를-호출하는-넷플릭스-리본으로-다음-세가지-메커니즘-사용">5. 스프링 클라우드와 넷플릭스 유레카, 그리고 서비스를 호출하는 넷플릭스 리본으로 다음 세가지 메커니즘 사용</h4>
+<h4 id="--spring-cloud와-discoveryclient">- Spring Cloud와 DiscoveryClient</h4>
+<h4 id="--spring-cloud와-리본-지원-resttemplate">- Spring Cloud와 리본 지원 RestTemplate</h4>
+<h4 id="--spring-cloud와-netflix-feign-클라이언트">- Spring Cloud와 Netflix Feign 클라이언트</h4>
+
+<h2 id="3장-client-recovery-pattern-1">3장 Client Recovery Pattern</h2>
+<h4 id="1-msa에-기반을-둔-application처럼-고도로-분산된-application을-설계할-때는-client-회복성이-고려되어야-함">1. MSA에 기반을 둔 Application처럼 고도로 분산된 Application을 설계할 때는 Client 회복성이 고려되어야 함</h4>
+<h4 id="2-심각한-서비스-장애예를-들어-서버-비정상-종료는-탐지하고-처리하기-쉽다">2. 심각한 서비스 장애(예를 들어 서버 비정상 종료)는 탐지하고 처리하기 쉽다.</h4>
+<h4 id="3-성능이-나쁜-서비스-하나가-호출을-완료할-때까지-호출-클라이언트를-대기시키므로-연쇄적인-자원-고갈을-유발">3. 성능이 나쁜 서비스 하나가 호출을 완료할 때까지 호출 클라이언트를 대기시키므로 연쇄적인 자원 고갈을 유발</h4>
+<h4 id="4-핵심적인-패턴--회로차단기-폴백-벌크헤드">4. 핵심적인 패턴 : 회로차단기, 폴백, 벌크헤드</h4>
+<h4 id="5-회로차단기--느리게-실행되고-성능-저하도니-시스템-호출을-종료해-빨리-실패시키고-자원-고갈을-방지">5. 회로차단기 : 느리게 실행되고 성능 저하도니 시스템 호출을 종료해 빨리 실패시키고 자원 고갈을 방지</h4>
+<h4 id="6-폴백-패턴--개발자가-원격-서비스-호출이-실패하거나-호출에-대한-회로-차단기가-실패할-때-대체할-코드-경로-정의-가능">6. 폴백 패턴 : 개발자가 원격 서비스 호출이 실패하거나 호출에 대한 회로 차단기가 실패할 때 대체할 코드 경로 정의 가능</h4>
+<h4 id="7-벌크헤드-패턴--원격-호출을-서로-격리하고-원격-서비스-호출을-자체-스레드-풀로-분리-일련의-서비스-호출이-실패할-때-애플리케이션-컨테이너의-모든-자원이-고갈되어서는-안됨">7. 벌크헤드 패턴 : 원격 호출을 서로 격리하고 원격 서비스 호출을 자체 스레드 풀로 분리, 일련의 서비스 호출이 실패할 때 애플리케이션 컨테이너의 모든 자원이 고갈되어서는 안됨</h4>
+<h4 id="8-hystrix-library는-구성-기능이-뛰어나며-application-전역과-class-thread-pool레벨로-설정-가능">8. Hystrix Library는 구성 기능이 뛰어나며, Application 전역과 Class, Thread pool레벨로 설정 가능</h4>
+<h4 id="9-hustrix는-thread와-semaphore-격리-모델을-지원">9. Hustrix는 THREAD와 SEMAPHORE 격리 모델을 지원</h4>
+<h4 id="10-thread-모델hystrix의-기본-격리-모델--hystrix로-보호된-호출을-완벽히-격리해서-부모-스레드-컨텍스트를-히스트릭스가-관리하는-스레드에-전파하지-않음">10. THREAD 모델(Hystrix의 기본 격리 모델) : Hystrix로 보호된 호출을 완벽히 격리해서 부모 스레드 컨텍스트를 히스트릭스가 관리하는 스레드에 전파하지 않음</h4>
+<h4 id="11-semaphore-모델--hystrix-호출을-위해-별도의-스레드를-사용하지-않음-더-효율적이지만-히스트릭스가-호출을-중단할-때-서비스가-예상하지-않은-동작도-유발할-수-있음">11. SEMAPHORE 모델 : Hystrix 호출을 위해 별도의 스레드를 사용하지 않음. 더 효율적이지만 히스트릭스가 호출을 중단할 때 서비스가 예상하지 않은 동작도 유발할 수 있음</h4>
+
+<h2 id="4장-service-routing-1">4장 Service Routing</h2>
+<h4 id="1-msa는-service-gateway-구축을-단순화">1. MSA는 Service Gateway 구축을 단순화</h4>
+<h4 id="2-zuul-service는-netflix-eureka서버와-통합하고-eureka에-등록된-서비스를-자동으로-주울-경로에-매핑">2. Zuul Service는 Netflix Eureka서버와 통합하고 Eureka에 등록된 서비스를 자동으로 주울 경로에 매핑</h4>
+<h4 id="3-zuul은-관리하는-모든-경로-앞에-api와-같은-prefix를-서비스-경로에-쉽게-추가-가능">3. Zuul은 관리하는 모든 경로 앞에 /api와 같은 Prefix를 서비스 경로에 쉽게 추가 가능</h4>
+<h4 id="4-zuul을-사용하면-수동으로-경로-매핑을-정의-가능-이러한-경로-매핑은-application-구성-파일에-정의">4. Zuul을 사용하면 수동으로 경로 매핑을 정의 가능, 이러한 경로 매핑은 Application 구성 파일에 정의</h4>
+<h4 id="5-spring-cloud-config-server를-사용해-주울-서버를-재시작하지-않고-경로-매핑을-동적으로-다시-로드-가능">5. Spring Cloud Config Server를 사용해 주울 서버를 재시작하지 않고 경로 매핑을 동적으로 다시 로드 가능</h4>
+<h4 id="6-zuul의-hystrix와-ribbon-timeout을-전체-및-개별-서비스-수준으로-사용자-정의할-수-있음">6. Zuul의 Hystrix와 Ribbon timeout을 전체 및 개별 서비스 수준으로 사용자 정의할 수 있음</h4>
+<h4 id="7-zuul-filter로-사용자-정의-비즈니스-로직을-구현할-수-있다-zuul은-3개의-zuul-filter인-사전필터와-사후필터-경로-필터를-제공">7. Zuul Filter로 사용자 정의 비즈니스 로직을 구현할 수 있다. Zuul은 3개의 Zuul Filter인 사전필터와 사후필터, 경로 필터를 제공</h4>
+<h4 id="8-zuul의-사전-필터는-상관관계-id를-생성해-주울로-연결되는-모든-서비스에-주입">8. Zuul의 사전 필터는 상관관계 ID를 생성해 주울로 연결되는 모든 서비스에 주입</h4>
+<h4 id="9-zuul의-사후-필터는-service-client에-대한-모든-http-서비스-응답에-상관관계-id를-삽입">9. Zuul의 사후 필터는 Service Client에 대한 모든 Http 서비스 응답에 상관관계 ID를 삽입</h4>
+<h4 id="10-사용자-정의된-주울의-경로-필터는-유레카-서비스-id에-기반을-둔-동적-라우팅을-수행해-동일-서비스의-다른-버전에-대해-ab-테스팅을-수행-가능">10. 사용자 정의된 주울의 경로 필터는 유레카 서비스 ID에 기반을 둔 동적 라우팅을 수행해 동일 서비스의 다른 버전에 대해 A/B 테스팅을 수행 가능</h4>
+
+<h2 id="5장-spring-cloud-stream을-사용한-event-driven-architecture">5장 Spring Cloud Stream을 사용한 Event Driven Architecture</h2>
+<h4 id="1-oauth2는-사용자를-인증하는-토큰-기반의-인증-프레임-워크">1. OAuth2는 사용자를 인증하는 토큰 기반의 인증 프레임 워크</h4>
+<h4 id="2-oauth2를-이용하면-사용자-요청을-처리하는-각-마이크로-서비스를-호출할-때마다-사용자-자격-증명을-제공할-필요가-없음">2. OAuth2를 이용하면 사용자 요청을 처리하는 각 마이크로 서비스를 호출할 때마다 사용자 자격 증명을 제공할 필요가 없음</h4>
+<h4 id="3-oauth2는-grant라는-다양한-매커니즘을-제공해-웹-서비스-호출을-보호">3. OAuth2는 Grant라는 다양한 매커니즘을 제공해 웹 서비스 호출을 보호</h4>
+<h4 id="4-oauth2를-스프링에서-사용하려면-oauth2-기반의-인증-서비스를-설정해야-한다">4. OAuth2를 스프링에서 사용하려면 OAuth2 기반의 인증 서비스를 설정해야 한다.</h4>
+<h4 id="5-서비스를-호출하려는-모든-애플리케이션은-oauth2-인증-서비스에-등록되어야-한다">5. 서비스를 호출하려는 모든 애플리케이션은 OAuth2 인증 서비스에 등록되어야 한다.</h4>
+<h4 id="6-application-고유-application-이름과-secret-key가-있다">6. Application 고유 Application 이름과 Secret Key가 있다.</h4>
+<h4 id="7-사용자-자격-증명과-역할은-메모리나-데이터-저장소에-있고-spring-보안으로-접근">7. 사용자 자격 증명과 역할은 메모리나 데이터 저장소에 있고 Spring 보안으로 접근</h4>
+<h4 id="8-각-서비스는-역할이-수행할-행위를-정의">8. 각 서비스는 역할이 수행할 행위를 정의</h4>
+<h4 id="9-spring-cloud-security는-jwt-명세를-지원">9. Spring Cloud Security는 JWT 명세를 지원</h4>
+<h4 id="10-jwt는-oauth2-토큰을-생성하기-위해-서명된-javascript-표준을-정의">10. JWT는 OAuth2 토큰을 생성하기 위해 서명된 Javascript 표준을 정의</h4>
+<h4 id="11-jwt를-사용하면-사용자-정의-필드를-명세에-삽입-가능">11. JWT를 사용하면 사용자 정의 필드를 명세에 삽입 가능</h4>
+<h4 id="12-msa-security는-oauth2를-사용하는-것-이상을-포함">12. MSA Security는 OAuth2를 사용하는 것 이상을 포함</h4>
+<h4 id="13-https를-사용해-서비스-간-호출을-암호화">13. HTTPS를 사용해 서비스 간 호출을 암호화</h4>
+<h4 id="14-service-gateway를-사용해-서비스에-접근-가능한-지점을-줄이자">14. Service Gateway를 사용해 서비스에 접근 가능한 지점을 줄이자</h4>
+<h4 id="15-서비스가-실행되는-운영-체제의-인바운드-및-아웃바운드-포트-수를-제한해-서비스-공격-지점을-제한">15. 서비스가 실행되는 운영 체제의 인바운드 및 아웃바운드 포트 수를 제한해 서비스 공격 지점을 제한</h4>
+
+<h2 id="6장-spring-cloud-stream을-사용한-event-driven-architecture-1">6장 Spring Cloud Stream을 사용한 Event Driven Architecture</h2>
+<h4 id="1-messaging을-사용한-비동기식-통신은-msa의-중요한-부분">1. Messaging을 사용한 비동기식 통신은 MSA의 중요한 부분</h4>
+<h4 id="2-application에서-messaging을-사용하면-서비스를-확장하고-결함에-더-잘-견디게fault-tolerant-만들-수-있다">2. Application에서 Messaging을 사용하면 서비스를 확장하고 결함에 더 잘 견디게(Fault-tolerant) 만들 수 있다</h4>
+<h4 id="3-spring-cloud-stream은-간단한-에너테이션을-사용하고-하부-메시지-플랫폼별-세부-정보를-추상화-해-메시지-발행과-소비를-단순화">3. Spring Cloud Stream은 간단한 에너테이션을 사용하고 하부 메시지 플랫폼별 세부 정보를 추상화 해 메시지 발행과 소비를 단순화</h4>
+<h4 id="4-spring-cloud-stream의-message-source는-annotation된-자바-method로-message-broker-queue에-메시지를-발행">4. Spring Cloud Stream의 Message Source는 Annotation된 자바 Method로 Message Broker Queue에 메시지를 발행</h4>
+<h4 id="5-spring-cloud-stream의-message-sync는-annotation된-java-method로-message-broker에서-message를-수신한다">5. Spring Cloud Stream의 Message Sync는 Annotation된 Java Method로 Message Broker에서 Message를 수신한다</h4>
+<h4 id="6-redis는-db와-cache로-사용될-수-있는-key-value-저장소">6. Redis는 DB와 Cache로 사용될 수 있는 Key-value 저장소</h4>
+
+<h2 id="7장-spring-cloud-slueth와-zipkins를-이용한-분산추적-1">7장 Spring Cloud Slueth와 Zipkins를 이용한 분산추적</h2>
+<h4 id="1-spring-cloud-sleuth를-사용하면-msa-호출에-추적-정보상관관계-id를-완벽하게-추가할-수-있다">1. Spring Cloud Sleuth를 사용하면 MSA 호출에 추적 정보(상관관계 ID)를 완벽하게 추가할 수 있다.</h4>
+<h4 id="2-상관관계-id는-여러-서비스-사이에서-로그-항목을-연결하는-데-사용-이-id로-한-트랜잭션에-연관된-여러-서비스에서-트랙잭션-동작을-확인-가능">2. 상관관계 ID는 여러 서비스 사이에서 로그 항목을 연결하는 데 사용. 이 ID로 한 트랜잭션에 연관된 여러 서비스에서 트랙잭션 동작을 확인 가능</h4>
+<h4 id="3-상관관계-id가-강력하지만-다양한-출처에서-오는-로그를-수집하고-수집된-내용을-검색하며-질의할-수-있는-수집-플랫폼과-상관관계-id-개념은-짝을-이루어야-함">3. 상관관계 ID가 강력하지만, 다양한 출처에서 오는 로그를 수집하고 수집된 내용을 검색하며 질의할 수 있는 수집 플랫폼과 상관관계 ID 개념은 짝을 이루어야 함</h4>
+<h4 id="4-여러-가지-사내-구축형-로그-수집-플랫폼이-존재하지만-클라우드-기반-서비스를-사용하면-대규모-infrastructure를-갖추지-않고도-로그를-관리할-수-있따-애플리케이션의-로깅-용량이-증가해도-쉽게-확장할-수-있다">4. 여러 가지 사내 구축형 로그 수집 플랫폼이 존재하지만, 클라우드 기반 서비스를 사용하면 대규모 Infrastructure를 갖추지 않고도 로그를 관리할 수 있따. 애플리케이션의 로깅 용량이 증가해도 쉽게 확장할 수 있다.</h4>
+<h4 id="5-log-수집-platform과-docker-container를-통합해-container의-표준-출력ㆍ에러stdoutstderr로-기록되는-모든-로그-데이터를-수집-docker-container를-logspout와-클라우드-logging-platformpapertrail과-통합해-로그를-수집하고-쿼리할-수-있음">5. Log 수집 Platform과 Docker Container를 통합해 Container의 표준 출력ㆍ에러(stdout/stderr)로 기록되는 모든 로그 데이터를 수집. Docker Container를 Logspout와 클라우드 Logging platform(Papertrail)과 통합해 로그를 수집하고 쿼리할 수 있음</h4>
+<h4 id="6-통합된-logging-platform이-중요하지만-msa-사이의-트랜잭션을-시각적으로-추적할-수-있는-기능도-매우-소중한-도구">6. 통합된 Logging Platform이 중요하지만 MSA 사이의 트랜잭션을 시각적으로 추적할 수 있는 기능도 매우 소중한 도구</h4>
+<h4 id="7-zipkin을-사용하면-서비스-호출이-이루어질-때-서비스-사이에-존재하는-의존성을-볼-수-있음">7. Zipkin을 사용하면 서비스 호출이 이루어질 때 서비스 사이에 존재하는 의존성을 볼 수 있음</h4>
+<h4 id="8-spring-cloud-sleuth는-zipkin과-통합-zipkin은-트랜잭션-흐름을-그래픽으로-보여주고-사용자-트랜잭션에-연관된-msa-성능-특성을-이해할-수-있게-함">8. Spring Cloud Sleuth는 Zipkin과 통합. Zipkin은 트랜잭션 흐름을 그래픽으로 보여주고, 사용자 트랜잭션에 연관된 MSA 성능 특성을 이해할 수 있게 함</h4>
+<h4 id="9-spring-cloud-sleuth는-sleuth가-활성화도니-서비스에-사용되는-http-호출과-inboudoutbound-메시지-채널에-대한-추적-데이터를-자동으로-포착">9. Spring Cloud Sleuth는 Sleuth가 활성화도니 서비스에 사용되는 HTTP 호출과 Inboud/outbound 메시지 채널에 대한 추적 데이터를 자동으로 포착</h4>
+<h4 id="10-spring-cloud-sleuth는-각-서비스-호출을-span-개념에-매핑-zipkin에서-각-span의-성능을-볼-수-있음">10. Spring Cloud Sleuth는 각 서비스 호출을 Span 개념에 매핑. Zipkin에서 각 Span의 성능을 볼 수 있음</h4>
+<h4 id="11-spring-cloud-sleuth와-zipkin에서-spring-기반이-아닌-지원postgres나-redis-같은-database-server의-성능을-파악하도록-사용자-정의-span을-재정의할-수-있다">11. Spring Cloud Sleuth와 Zipkin에서 Spring 기반이 아닌 지원(Postgres나 Redis 같은 Database Server)의 성능을 파악하도록 사용자 정의 Span을 재정의할 수 있다.</h4>
+
+<h2 id="8장-publishing-1">8장 Publishing</h2>
+<h4 id="1-build-및-배포-pipeline은-msa-제공을-위해-매우-중요한-부분이다-제대로-작동하는-빌드-및-배포-파이프라인을-통해ㅐ-새로운-기능과-버그-수정을-몇-분-안에-배포할-수-있다">1. Build 및 배포 Pipeline은 MSA 제공을 위해 매우 중요한 부분이다. 제대로 작동하는 빌드 및 배포 파이프라인을 통해ㅐ 새로운 기능과 버그 수정을 몇 분 안에 배포할 수 있다.</h4>
+<h4 id="2-build-및-배포-pipeline은-서비스를-제공하는-데-사람의-직접적인-개입-없이-자동화되어야-한다-프로세스의-수동-부분은-변동-및-실패-가능성을-나타낸다">2. Build 및 배포 Pipeline은 서비스를 제공하는 데 사람의 직접적인 개입 없이 자동화되어야 한다. 프로세스의 수동 부분은 변동 및 실패 가능성을 나타낸다.</h4>
+<h4 id="3-build-및-배포-pipeline의-자동화에는-많은-scripting과-올바른-구성이-필요한다-자동화-구축을-위해-필요한-일의-양을-과소평가해서는-안-된다">3. Build 및 배포 Pipeline의 자동화에는 많은 Scripting과 올바른 구성이 필요한다. 자동화 구축을 위해 필요한 일의 양을 과소평가해서는 안 된다.</h4>
+<h4 id="4-build-및-배포-pipeline은-불변-가상-머신-또는-컨테이너-이미지를-제공해야-한다-서버-이미지가-생성된-후에는-절대-변경되면-안된다">4. Build 및 배포 Pipeline은 불변 가상 머신 또는 컨테이너 이미지를 제공해야 한다. 서버 이미지가 생성된 후에는 절대 변경되면 안된다.</h4>
+<h4 id="5-환경별-서버-구성은-서버가-설정될-때-매개변수로-전달되어야-함">5. 환경별 서버 구성은 서버가 설정될 때 매개변수로 전달되어야 함</h4>
+
+  </div>
+</div>
+</div>

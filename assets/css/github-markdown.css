@@ -671,7 +671,6 @@
     margin-top: 24px;
     margin-bottom: 16px;
     font-weight: 600;
-    line-height: 1.25;
   }
   
   .markdown-body h1 {
@@ -681,7 +680,6 @@
   .markdown-body h1,
   .markdown-body h2 {
     padding-bottom: .3em;
-    border-bottom: 1px solid #eaecef;
   }
   
   .markdown-body h2 {
