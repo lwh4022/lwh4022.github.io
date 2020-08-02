@@ -22,17 +22,17 @@
     <link rel="stylesheet" href="/assets/css/custom.css">
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="DDD 관련용어" />
+<meta property="og:title" content="도커 가이드" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="헤드퍼스트 디자인패턴" />
-<meta property="og:description" content="헤드퍼스트 디자인패턴" />
-<link rel="canonical" href="http://localhost:4000/develop/ddd/2020/07/20/Design-pattern/" />
-<meta property="og:url" content="http://localhost:4000/develop/ddd/2020/07/20/Design-pattern/" />
+<meta name="description" content="시작하세요! 도커/쿠버네티스" />
+<meta property="og:description" content="시작하세요! 도커/쿠버네티스" />
+<link rel="canonical" href="http://localhost:4000/develop/docker/2020/08/02/Docker-0/" />
+<meta property="og:url" content="http://localhost:4000/develop/docker/2020/08/02/Docker-0/" />
 <meta property="og:site_name" content="Maymanko’s blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-07-20T00:00:00+09:00" />
+<meta property="article:published_time" content="2020-08-02T00:00:00+09:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","datePublished":"2020-07-20T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/ddd/2020/07/20/Design-pattern/"},"url":"http://localhost:4000/develop/ddd/2020/07/20/Design-pattern/","description":"헤드퍼스트 디자인패턴","headline":"DDD 관련용어","dateModified":"2020-07-20T00:00:00+09:00","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","datePublished":"2020-08-02T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/docker/2020/08/02/Docker-0/"},"url":"http://localhost:4000/develop/docker/2020/08/02/Docker-0/","description":"시작하세요! 도커/쿠버네티스","headline":"도커 가이드","dateModified":"2020-08-02T00:00:00+09:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
@@ -350,20 +350,42 @@
 
 <div class="container">
   <div id="post-info">
-  <h3>DDD 관련용어</h3>
+  <h3>도커 가이드</h3>
   
 </div>
 <div class="divider"></div>
 <div class="row">
   <div class="col s12 markdown-body">
     <blockquote>
-  <p>헤드퍼스트 디자인패턴</p>
+  <p>시작하세요! 도커/쿠버네티스</p>
 </blockquote>
 
-<h1 id="응집도">응집도</h1>
-<p>한 클래스 또는 모듈이 특정 목적 또는 역할을 얼마나 일관되게 지원하는지를 나타내는 척도</p>
-
-<p>응집도가 낮으면 서로 상관 없는 기능들이 묶여 있다는 것</p>
+<h1 id="목차">목차</h1>
+<h3 id="1-도커-엔진">1. 도커 엔진</h3>
+<h4 id="--도커-이미지와-컨테이너">- 도커 이미지와 컨테이너</h4>
+<h4 id="--도커-컨테이너-다루기">- 도커 컨테이너 다루기</h4>
+<h4 id="--도커-이미지">- 도커 이미지</h4>
+<h4 id="--dockerfile">- Dockerfile</h4>
+<h4 id="--도커-데몬">- 도커 데몬</h4>
+<h3 id="2-도커-스웜">2. 도커 스웜</h3>
+<h4 id="--스웜-클래식과-스웜모드">- 스웜 클래식과 스웜모드</h4>
+<h4 id="--스웜모드">- 스웜모드</h4>
+<h3 id="3-도커-컴포즈">3. 도커 컴포즈</h3>
+<h3 id="4-쿠버네티스">4. 쿠버네티스</h3>
+<h4 id="--포드">- 포드</h4>
+<h4 id="--레플리카셋--일정-개수의-포드를-유지하는-컨트롤러">- 레플리카셋 : 일정 개수의 포드를 유지하는 컨트롤러</h4>
+<h4 id="--디플로이먼트--레플리카셋-포드의-배포를-관리">- 디플로이먼트 : 레플리카셋, 포드의 배포를 관리</h4>
+<h4 id="--서비스-포드를-연결하고-외부에-노출">- 서비스: 포드를 연결하고 외부에 노출</h4>
+<h4 id="--namespace-configmap-secret">- namespace, configmap, secret</h4>
+<h3 id="5-인그레스">5. 인그레스</h3>
+<h3 id="6-pvpersist-volumn-persist-volumn-claim">6. PV(Persist Volumn, Persist Volumn Claim)</h3>
+<h3 id="7-serviceaccount와-rbac">7. ServiceAccount와 RBAC</h3>
+<h3 id="8-고급-설정">8. 고급 설정</h3>
+<h3 id="9-custom-resource와-controller">9. Custom Resource와 Controller</h3>
+<h3 id="10-pod를-사용하는-다른-object">10. Pod를 사용하는 다른 Object</h3>
+<h4 id="--jobs">- Jobs</h4>
+<h4 id="--daemonsets">- DaemonSets</h4>
+<h4 id="--statefulsets">- StatefulSets</h4>
 
   </div>
 </div>
