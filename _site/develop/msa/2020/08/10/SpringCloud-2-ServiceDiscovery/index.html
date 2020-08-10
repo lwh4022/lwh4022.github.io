@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Maymanko&#39;s blog
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+      
+        <link rel="stylesheet" href="/assets/css/post.css">
+      
+      
+      
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="스프링 클라우드 / ServiceDiscovery" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="스프링 마이크로 서비스 코딩 공작소" />
+<meta property="og:description" content="스프링 마이크로 서비스 코딩 공작소" />
+<link rel="canonical" href="http://localhost:4000/develop/msa/2020/08/10/SpringCloud-2-ServiceDiscovery/" />
+<meta property="og:url" content="http://localhost:4000/develop/msa/2020/08/10/SpringCloud-2-ServiceDiscovery/" />
+<meta property="og:site_name" content="Maymanko’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-10T00:00:00+09:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","datePublished":"2020-08-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/msa/2020/08/10/SpringCloud-2-ServiceDiscovery/"},"url":"http://localhost:4000/develop/msa/2020/08/10/SpringCloud-2-ServiceDiscovery/","description":"스프링 마이크로 서비스 코딩 공작소","headline":"스프링 클라우드 / ServiceDiscovery","dateModified":"2020-08-10T00:00:00+09:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+  </head>
+  
+  <body>
+    <header>
+      <nav class="top-nav hide-on-large-only">
+        <div class="nav-wrapper" style="background-color: #000000; background-image: url('/assets/images/black-felt.png')">
+          <div class="container">
+            <a class="page-title" href="/">Maymanko's blog</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-target="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color: #000000; background-image: url('/assets/images/black-felt.png');">
+        <li>
+          <h4 class="center-align" style="font-weight: bold;"><a class="white-text page-title" href="/">Maymanko's blog</a></h4>
+          <img class="circle z-depth-2 responsive-img" style="display:block; margin-left:auto; margin-right:auto; margin-top:20px; margin-bottom:20px; height:100px;" src="/assets/images/logo.jpeg"/>
+        </li>
+        
+        
+          <li>
+            <a class="waves-effect" href="/develop" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">code</i>
+              Develop
+                
+              
+                
+                  <span style="font-size: 1.05rem;">(20)</span>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a class="waves-effect" href="/develop/ddd" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  DDD
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(4)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/msa" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  MSA
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(5)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/docker" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Docker
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(1)</span>
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/react" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  React
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(2)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/typescript" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Typescript
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/electron" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Electron
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(1)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/rabbitmq" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  RabbitMQ
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/etc" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Etc
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(4)</span>
+                    
+                  
+                </a>
+              </li>
+            
+          </ul>
+        
+          <li>
+            <a class="waves-effect" href="/life" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">edit</i>
+              Life
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+          </ul>
+        
+          <li>
+            <a class="waves-effect" href="/vietnam" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">public</i>
+              Vietnam
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+          </ul>
+        
+      </ul>
+      
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h3>스프링 클라우드 / ServiceDiscovery</h3>
+  
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12 markdown-body">
+    <blockquote>
+  <p>스프링 마이크로 서비스 코딩 공작소</p>
+</blockquote>
+
+<h1 id="목차">목차</h1>
+<h3 id="1장-spring-cloud-config-server">1장 Spring Cloud Config Server</h3>
+<h3 id="2장-service-discovery">2장 Service Discovery</h3>
+<h3 id="3장-client-recovery-pattern">3장 Client Recovery Pattern</h3>
+<h3 id="4장-service-routing">4장 Service Routing</h3>
+<h3 id="5장-msa-security">5장 MSA Security</h3>
+<h3 id="6장-spring-cloud-stream을-사용한-event-driven-architecture">6장 Spring Cloud Stream을 사용한 Event Driven Architecture</h3>
+<h3 id="7장-spring-cloud-slueth와-zipkins를-이용한-분산추적">7장 Spring Cloud Slueth와 Zipkins를 이용한 분산추적</h3>
+<h3 id="8장-publishing">8장 Publishing</h3>
+
+<hr />
+
+<h1 id="service-discovery">Service Discovery</h1>
+
+<h2 id="간단요약">간단요약</h2>
+<h4 id="1-service-discovery-pattern은-서비스의-물리적-위치를-추상화하는데-사용한다">1. Service Discovery Pattern은 서비스의 물리적 위치를 추상화하는데 사용한다</h4>
+<h4 id="2-eureka같은-service-discovery-engine은-service-client에-영향을-주지-않고-해당-환경의-서비스-인스턴스를-원할하게-추가ㆍ삭제할-수-있다">2. Eureka같은 Service Discovery Engine은 Service client에 영향을 주지 않고 해당 환경의 서비스 인스턴스를 원할하게 추가ㆍ삭제할 수 있다</h4>
+<h4 id="3-client측-부하-분산을-사용하면-서비스를-호출하는-client에서-물리적-위치를-캐싱해-더-나은-성능과-회복성을-제공할-수-있다">3. Client측 부하 분산을 사용하면 서비스를 호출하는 Client에서 물리적 위치를 캐싱해 더 나은 성능과 회복성을 제공할 수 있다</h4>
+<h4 id="4-eureka는-넷플릭스-프로젝트의-spring-cloud와-사용하면-쉽게-구축하고-구성할-수-있다">4. Eureka는 넷플릭스 프로젝트의 Spring Cloud와 사용하면 쉽게 구축하고 구성할 수 있다.</h4>
+<h4 id="5-스프링-클라우드와-넷플릭스-유레카-그리고-서비스를-호출하는-넷플릭스-리본으로-다음-세가지-메커니즘-사용">5. 스프링 클라우드와 넷플릭스 유레카, 그리고 서비스를 호출하는 넷플릭스 리본으로 다음 세가지 메커니즘 사용</h4>
+<h4 id="--spring-cloud와-discoveryclient">- Spring Cloud와 DiscoveryClient</h4>
+<h4 id="--spring-cloud와-리본-지원-resttemplate">- Spring Cloud와 리본 지원 RestTemplate</h4>
+<h4 id="--spring-cloud와-netflix-feign-클라이언트">- Spring Cloud와 Netflix Feign 클라이언트</h4>
+
+<p><br />
+<br /></p>
+
+<h2 id="service-discovery의-장점">Service Discovery의 장점</h2>
+<h4 id="1-해당-환경에서-실행하는-서비스-인스턴스-갯수를-신속하게-수평하거나-확장할-수-있다">1. 해당 환경에서 실행하는 서비스 인스턴스 갯수를 신속하게 수평하거나 확장할 수 있다.</h4>
+<h4 id="2-애플리케이션의-회복성을-향상하는데-도움이-된다">2. 애플리케이션의 회복성을 향상하는데 도움이 된다.</h4>
+
+<p><br />
+<br /></p>
+
+<h2 id="service-discovery-mechanism">Service Discovery Mechanism</h2>
+<h4 id="1-고가용성">1. 고가용성</h4>
+<h5 id="--서비스-검색-정보를-서비스-디스커버리-클러스터의-여러-노드가-공유하는-hot-클러스터링-환경-지원">- 서비스 검색 정보를 서비스 디스커버리 클러스터의 여러 노드가 공유하는 ‘hot’ 클러스터링 환경 지원</h5>
+<h5 id="--한-노드가-사용할-수-없게-되면-클러스터의-다른-노드가-인계-가능">- 한 노드가 사용할 수 없게 되면 클러스터의 다른 노드가 인계 가능</h5>
+<h4 id="2-peer-to-peer--각-노드는-서비스-인스턴스의-상태를-공유">2. Peer-To-Peer : 각 노드는 서비스 인스턴스의 상태를 공유</h4>
+<h4 id="3-부하분산--요청을-동적으로-부하-분산해서-서비스-디스커버리가-관리하는-모든-서비스-인스턴스에-분배">3. 부하분산 : 요청을 동적으로 부하 분산해서 서비스 디스커버리가 관리하는 모든 서비스 인스턴스에 분배</h4>
+<h4 id="4-회복성--클라이언트는-서비스-정보를-로컬에-캐시한다">4. 회복성 : 클라이언트는 서비스 정보를 로컬에 캐시한다.</h4>
+<h4 id="5-장애내성--서비스-인스턴스의-비정상을-탐지하고-서비스-목록에서-제거-사람의-개입없이-조치되어야-함">5. 장애내성 : 서비스 인스턴스의 비정상을 탐지하고 서비스 목록에서 제거. 사람의 개입없이 조치되어야 함</h4>
+
+<p><br />
+<br /></p>
+
+<h2 id="service-discovery-architecture">Service Discovery Architecture</h2>
+<h4 id="1-service-registration--서비스를-service-discovery-agent에-어떻게-등록하는가">1. Service Registration : 서비스를 Service Discovery Agent에 어떻게 등록하는가?</h4>
+<h4 id="2-client-lookup-of-service-address--서비스-클라이언트가-어떻게-서비스-정보를-검색하는가">2. Client Lookup of service address : 서비스 클라이언트가 어떻게 서비스 정보를 검색하는가?</h4>
+<h4 id="3-information-sharing--서비스-정보를-노드-간에-어떻게-공유하는가">3. Information sharing : 서비스 정보를 노드 간에 어떻게 공유하는가?</h4>
+<h5 id="--서비스는-일반적으로-1개의-서비스-디스커버리-인스턴스에만-등록">- 서비스는 일반적으로 1개의 서비스 디스커버리 인스턴스에만 등록</h5>
+<h5 id="--전파메커니즘--하드-코딩된-목록-사용-gossip과-같은-multicast-protocol-infection-style-protocol-사용">- 전파메커니즘 : 하드 코딩된 목록 사용, Gossip과 같은 multicast protocol, infection-style protocol 사용</h5>
+<h4 id="4-health-monitoring--서비스가-자신으-상태-정보를-서비스-디스버커리-에이전트에-어떻게-전달하는가">4. Health monitoring : 서비스가 자신으 상태 정보를 서비스 디스버커리 에이전트에 어떻게 전달하는가?</h4>
+
+<p><br />
+<br /></p>
+
+<h2 id="클라이언트측-분산">클라이언트측 분산</h2>
+<h4 id="1-서비스-소비자가-요청한-데이터를-서비스-소비자-기기에-로컬-캐시">1. 서비스 소비자가 요청한 데이터를 서비스 소비자 기기에 로컬 캐시</h4>
+<h4 id="2-서비스-소비자는-캐시에서-위치-정보-검색-일반적으로-라운드-로빈등으로-서비스-호출을-여러-인스턴스로-분산">2. 서비스 소비자는 캐시에서 위치 정보 검색, 일반적으로 ‘라운드 로빈’등으로 서비스 호출을 여러 인스턴스로 분산</h4>
+<h4 id="3-서비스-소비자는-주기적으로-서비스-디스커버리-서비스에-접속해-서비스-인스턴스-캐시를-새로고침">3. 서비스 소비자는 주기적으로 서비스 디스커버리 서비스에 접속해 서비스 인스턴스 캐시를 새로고침</h4>
+<p><br />
+<br /></p>
+
+<h2 id="서버-구성">서버 구성</h2>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server</span>
+<span class="n">compile</span> <span class="nl">group:</span> <span class="s1">'org.springframework.cloud'</span><span class="o">,</span> <span class="nl">name:</span> <span class="s1">'spring-cloud-starter-netflix-eureka-server'</span><span class="o">,</span> <span class="nl">version:</span> <span class="s1">'2.2.4.RELEASE'</span>
+</code></pre></div></div>
+<p><br /></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">server</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="s">8761 --- 유레카 서버가 수신 대기할 포트</span>
+
+<span class="na">eurka</span><span class="pi">:</span>
+  <span class="na">client</span><span class="pi">:</span>
+    <span class="na">registerWithEureka</span><span class="pi">:</span> <span class="no">false</span><span class="s"> --- 유레카 서비스에 자신을 등록하지 않음</span>
+    <span class="na">fetchRegistry</span><span class="pi">:</span> <span class="no">false</span><span class="s"> --- 레지스트리 정보를 로컬에 캐싱하지 않음</span>
+  <span class="na">server</span><span class="pi">:</span>
+    <span class="na">waitTimeInMsWhenSyncEmpty</span><span class="pi">:</span> <span class="s">5 --- 서버가 요청을 받기 전 대기할 초기 시간</span>
+  <span class="na">serviceUrl</span><span class="pi">:</span>
+    <span class="na">defaultZone</span><span class="pi">:</span> <span class="s">http://localhost:8761</span>
+</code></pre></div></div>
+<ul>
+  <li>waitTimeInMsWhenSyncEmpty는 모든 서비스가 등록할 기회를 갖도록 5분을 기다린 후 등록된 서비스 정보를 공유</li>
+  <li>Eureka는 등록된 서비스에서 10초 간격으로 연속 3회의 상태정보를 받아야 함</li>
+</ul>
+
+<p><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@SpringBootApplicatin</span>
+<span class="nd">@EnableEurekaServer</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EurekaServerApplication</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">EurekaServerApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h2 id="서비스-등록">서비스 등록</h2>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server</span>
+<span class="n">compile</span> <span class="nl">group:</span> <span class="s1">'org.springframework.cloud'</span><span class="o">,</span> <span class="nl">name:</span> <span class="s1">'spring-cloud-starter-netflix-eureka-client'</span><span class="o">,</span> <span class="nl">version:</span> <span class="s1">'2.2.4.RELEASE'</span>
+</code></pre></div></div>
+<p><br /></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">spring</span><span class="pi">:</span>
+  <span class="na">appliction</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">organizationservice --- 유레카에 등록할 서비스의 논리 이름</span>
+  <span class="na">profiles</span><span class="pi">:</span>
+    <span class="na">active</span><span class="pi">:</span> <span class="s">default</span>
+  <span class="na">cloud</span><span class="pi">:</span> 
+    <span class="na">config</span><span class="pi">:</span>
+      <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">eureka</span><span class="pi">:</span>
+  <span class="na">intance</span><span class="pi">:</span>
+    <span class="na">preferIpAddress</span><span class="pi">:</span> <span class="no">true</span><span class="s"> --- 서비스 이름 대신 IP주소 등록</span>
+  <span class="na">client</span><span class="pi">:</span>
+    <span class="na">registerWithEureka</span><span class="pi">:</span> <span class="no">true</span><span class="s"> --- 유레카에 서비스 등록</span>
+    <span class="na">fetchRegistry</span><span class="pi">:</span> <span class="no">true</span><span class="s"> --- 유레카를 검색할 때 마다 레지스트리가 로컬로 캐시</span>
+    <span class="na">serviceUrl</span><span class="pi">:</span>
+      <span class="na">defaultZone</span><span class="pi">:</span> <span class="s">http://localhost:8761/eureka --- 레지스트리 사본을 로컬로 가져오기</span>
+</code></pre></div></div>
+<ul>
+  <li>컨테이너 기반의 배포에서는 컨테이너는 DNS가 없는 임의로 생성된 호스트 이름을 부여받아 시작</li>
+  <li>preferIpAddress를 true로 하면 IP주소로 검색</li>
+  <li>30초마다 클라이언트 소프트웨어는 유레카 서비스에 레지스트리 변경 사항 여부를 재확인</li>
+  <li>defaultZone은 클라이언트가 위치를 확인하는데 사용할 유레카 서비스 목록을 쉼표로 구분해 보관
+<br />
+<br /></li>
+</ul>
+
+<h2 id="서비스-검색">서비스 검색</h2>
+<h4 id="1-spring-discovery-client">1. Spring Discovery Client</h4>
+<h4 id="2-rest-template이-활성화된-spring-discovery-client">2. Rest Template이 활성화된 Spring Discovery Client</h4>
+<h4 id="3-netfilx-feign-client">3. Netfilx Feign Client</h4>
+
+<h3 id="1-spring-discovery-client-1">1. Spring Discovery Client</h3>
+<h4 id="--리본-클라이언트와-해당-url에-등록된-모든-서비스에-대해-질의할-수-있다">- 리본 클라이언트와 해당 URL에 등록된 모든 서비스에 대해 질의할 수 있다.</h4>
+<h4 id="--url-하나를-검색-한후-표준-resttemplate-클래스로-서비스-호출">- URL 하나를 검색 한후 표준 RestTemplate 클래스로 서비스 호출</h4>
+<p><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@EnableDiscoveryClient</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Application</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">Application</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+<h3 id="2-리본-지원-스프링-resttemplate을-사용한-서비스-호출">2. 리본 지원 스프링 RestTemplate을 사용한 서비스 호출</h3>
+<p><br /></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Application</span><span class="o">{</span> 
+  
+  <span class="nd">@LoadBalanced</span>
+  <span class="nd">@Bean</span>
+  <span class="kd">public</span> <span class="nc">RestTemplate</span> <span class="nf">getRestTemplate</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">RestTemplate</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">Application</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><br /></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrganizationRestTemplateClient</span><span class="o">{</span>
+
+  <span class="nd">@Autowired</span>
+  <span class="nc">RestTemplate</span> <span class="n">restTemplate</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nc">Organization</span> <span class="nf">getOrganization</span><span class="o">(</span><span class="nc">String</span> <span class="n">organizationId</span><span class="o">){</span>
+    <span class="nc">ResposeEntity</span><span class="o">&lt;</span><span class="nc">Organization</span><span class="o">&gt;</span> <span class="n">restExchange</span> <span class="o">=</span> 
+      <span class="n">restTemplate</span><span class="o">.</span><span class="na">exchange</span><span class="o">(</span>
+        <span class="s">"http://organizationservice/v1/organizations/{organizationId}"</span><span class="o">,</span>
+        <span class="nc">HttpMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span>
+        <span class="kc">null</span><span class="o">,</span> <span class="nc">Organization</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">organizationId</span><span class="o">);</span>
+      <span class="o">)</span>
+    
+    <span class="k">return</span> <span class="n">restExchange</span><span class="o">.</span><span class="na">getBody</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>라운드 로빈 방식으로 부하 분산
+<br />
+    <h3 id="3-netflix-feign-클라이언트로-서비스-호출">3. NetFlix Feign 클라이언트로 서비스 호출</h3>
+    <h4 id="--스프링-클라우드-프레임워크는-대상-rest-서비스를-호출하는-데-사용되는-프록시-클래스를-동적으로-생성">- 스프링 클라우드 프레임워크는 대상 REST 서비스를 호출하는 데 사용되는 프록시 클래스를 동적으로 생성</h4>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@EnableFeignClients</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Application</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">Application</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@FeignClient</span><span class="o">(</span><span class="s">"organizationservice"</span><span class="o">)</span> <span class="c1">// Feign애너테이션으로 조직 서비스를 Feign에서 확인</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OrganizationFeignClient</span><span class="o">{</span>
+
+  <span class="nd">@RestMapping</span><span class="o">(</span><span class="n">method</span><span class="o">=</span><span class="nc">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">,</span> <span class="n">value</span><span class="o">=</span><span class="s">"/v1/organizations/{organizationId}"</span><span class="o">,</span> <span class="n">consumes</span><span class="o">=</span><span class="s">"application/json"</span><span class="o">)</span>
+  <span class="nc">Organization</span> <span class="nf">getOrganization</span><span class="o">(</span>
+    <span class="nd">@PathVariable</span><span class="o">(</span><span class="s">"organizationId"</span> <span class="nc">String</span> <span class="n">organizationId</span><span class="o">);</span>
+  <span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<ul>
+  <li>RestTemplate 클래스를 사용할 때 모든 서비스 호출의 HTTP 상태 코드는 getStatus()로 반환</li>
+  <li>Feign 클라이언트를 사용하면 호출된 서비스에서 반환하는 HTTP 4xx-5xx 상태 코드는 FeignException에 매핑</li>
+  <li>FeignException에 특정 에러 메시지로 파싱할 수 있는 JSON 바디가 포함</li>
+  <li>Feign은 에러를 사용자 정의 Exception 클래스로 재매핑하는 에러 디코더 작성 기능 제공
+<br /></li>
+</ul>
+
+  </div>
+</div>
+</div>
