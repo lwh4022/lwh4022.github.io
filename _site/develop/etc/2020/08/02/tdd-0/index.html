@@ -12,24 +12,27 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     
       
-        
-          <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="stylesheet" href="/assets/css/post.css">
       
-    
+      
+      
     <link rel="stylesheet" href="/assets/css/syntax.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="stylesheet" href="/assets/css/github-markdown.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Maymanko’s blog" />
+<meta property="og:title" content="오늘의 배운 내용" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/page4/" />
-<meta property="og:url" content="http://localhost:4000/page4/" />
+<meta name="description" content="1. 함수형 프로그래밍에서 Side effect -&gt; 함수 외부에 있는 객체 혹은 변수 내용을 변경하는 것을 의미 -&gt; 로그를 출력하는 메서드도 포함" />
+<meta property="og:description" content="1. 함수형 프로그래밍에서 Side effect -&gt; 함수 외부에 있는 객체 혹은 변수 내용을 변경하는 것을 의미 -&gt; 로그를 출력하는 메서드도 포함" />
+<link rel="canonical" href="http://localhost:4000/develop/etc/2020/08/02/tdd-0/" />
+<meta property="og:url" content="http://localhost:4000/develop/etc/2020/08/02/tdd-0/" />
 <meta property="og:site_name" content="Maymanko’s blog" />
-<link rel="prev" href="http://localhost:4000/page3/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-02T00:00:00+09:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/page4/","headline":"Maymanko’s blog","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","datePublished":"2020-08-02T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/etc/2020/08/02/tdd-0/"},"url":"http://localhost:4000/develop/etc/2020/08/02/tdd-0/","description":"1. 함수형 프로그래밍에서 Side effect -&gt; 함수 외부에 있는 객체 혹은 변수 내용을 변경하는 것을 의미 -&gt; 로그를 출력하는 메서드도 포함","headline":"오늘의 배운 내용","dateModified":"2020-08-02T00:00:00+09:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
@@ -346,132 +349,156 @@
 
 
 <div class="container">
-  <div class="row">
+  <div id="post-info">
+  <h3>오늘의 배운 내용</h3>
   
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/react/2020/07/08/usingRedux/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title" style="font-weight: bold;margin-bottom:2rem;">Redux 사용방법</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.07.08
-          </p>
-          
-          <p></p>
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12 markdown-body">
+    <h1 id="1-함수형-프로그래밍에서-side-effect">1. 함수형 프로그래밍에서 Side effect</h1>
+<p>-&gt; 함수 외부에 있는 객체 혹은 변수 내용을 변경하는 것을 의미
+-&gt; 로그를 출력하는 메서드도 포함</p>
 
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#React</span>
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#Typescript</span>
-          
-        </div>
-      </div>
-    </a>
-  </div>
-  
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/ddd/2020/06/15/DDD_start/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title" style="font-weight: bold;margin-bottom:2rem;">DDD 시작하기</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.06.15
-          </p>
-          
-          <p></p>
+<h1 id="2-빠른-암기비법">2. 빠른 암기비법</h1>
+<h2 id="1-좋은-테스트의-first-속성">1. 좋은 테스트의 FIRST 속성</h2>
+<ul>
+  <li>
+    <ol>
+      <li>Fast : 빠르게</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Isolation : 고립시킨다</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Repeatable : 반복가능해야 함</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Self-verifiable : 스스로 검증 가능</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Timely : 적시에 사용</li>
+    </ol>
+  </li>
+</ul>
 
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#DDD</span>
-          
-        </div>
-      </div>
-    </a>
-  </div>
-  
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/msa/2020/05/10/RecoverPattern/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title" style="font-weight: bold;margin-bottom:2rem;">Recovery Pattern</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.05.10
-          </p>
-          
-          <p></p>
+<h2 id="2-right-bicep--무엇을-테스트">2. RIGHT-BICEP : 무엇을 테스트?</h2>
+<ul>
+  <li>
+    <ol>
+      <li>[Right]-BICEP : 결과가 올바른가?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Right-[B]ICEP : 경계 조건은 맞는가?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>경계 조건에서는 CORRECT 기억</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Right-B[I]CEP : 역 관계를 검사할 수 있는가?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Right-BI[C]EP : 다른 수단을 활용하여 교차 검사할 수 있는가?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Right-BIC[E]P : 오류 조건을 강제로 일어나게 할 수 있는가?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Right-BICE[P] : 성능 조건은 기준에 부합하는가?</li>
+    </ol>
+  </li>
+</ul>
 
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#MSA</span>
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#Develop</span>
-          
-        </div>
-      </div>
-    </a>
-  </div>
-  
-  <div class="col s12" style="margin-left: auto; margin-right: auto;">
-    <a href="/develop/msa/2020/05/06/SpringEureka/" style="color:black">
-      <div class="card hoverable">
-        <div class="card-content">
-          <span id="post-title" class="card-title" style="font-weight: bold;margin-bottom:2rem;">Service Discovery with Spring Cloud and Eureka</span>
-          <p id="post-date">
-            <i class="material-icons">date_range</i>
-            2020.05.06
-          </p>
-          
-          <p></p>
+<h2 id="3-경계-조건--correct">3. 경계 조건 : CORRECT</h2>
+<ul>
+  <li>
+    <ol>
+      <li>[C]ORRECT: [C]onformance(준수)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>C[O]RRECT: [O]Ordering(순서)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>CO[R]RECT: [R]ange(범위)
+-&gt; 불변성을 검사하는 사용자 정의 매처 생성
+-&gt; 불변 메서드를 내장하여 범위 테스트</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>COR[R]ECT: [R]eference(참조)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>CORR[E]CT: [E]xistence(존재)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>CORRE[C]T: [C]ardinality(기수)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>CORREC[T]: [T]ime(시간)</li>
+    </ol>
+  </li>
+</ul>
 
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#MSA</span>
-          
-          <span style="color:black; background-color: #ccc;padding-left:5px;padding-right:5px;margin-right:5px;">#Develop</span>
-          
-        </div>
-      </div>
-    </a>
-  </div>
-  
+<h2 id="4-클래스의-설계-원칙--solid">4. 클래스의 설계 원칙 : SOLID</h2>
+<ul>
+  <li>
+    <ol>
+      <li>[S]OLID: [SRP, 단일 책임 원칙]: 클래스를 변경할 때 한 가지 이유만 있어야 함</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>S[O]LID: [OCP, 개방 폐쇄 원칙]: 클래스는 확장에 열려 있고 변경에는 닫혀 있어야함, 기존 클래스의 변경을 최소화 해야함</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>SO[L]ID: [LSP, 리스코프 치환 원칙]: 하위 타입은 반드시 상위 타입을 대체할 수 있어야 함. Client 입장에서 오버라이딩한 메서드가 기능성을 깨뜨리면 안도미</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>SOL[I]D: [ISP, 인터페이스 분리 원칙]: Client는 필요하지 않는 메서드에 의존하면 안됨. 커다란 인터페이스를 다수의 작은 인터페이스로 분할</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>SOLI[D]: [DIP, 의존성 역전 원칙]: 고수준 모듈은 저수준 모듈을 의존해서는 안됨. 둘다 추상 클래스에 의존해야 함. 추상 클래스는 구체 클래스에 의존하면 안됨. 구체 클래스는 추상 클래스에 의존해야 함</li>
+    </ol>
+  </li>
+</ul>
 
-  <div class="col s12 center-align">
-    <ul class="pagination">
-      <li class="waves-effect">
-        
-        
-        <a href="/page3">
-        
-        
-          <i class="material-icons">chevron_left</i>
-        </a>
-      </li>
-      
-      <li class="waves-effect">
-        <a href="/">1</a>
-      
-      </li>
-      
-      
-      <li class="waves-effect"><a href="/page2">2</a></li>
-      
-      
-      
-      <li class="waves-effect"><a href="/page3">3</a></li>
-      
-      
-      
-      <li class="active teal"><a href="#!">4</a></li>
-      
-      
-      <li class="disabled">
-        
-        <a href="#!">
-        
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-    </ul>
   </div>
 </div>
 </div>
