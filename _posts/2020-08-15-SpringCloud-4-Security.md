@@ -46,6 +46,16 @@ tags: [MSA]
 #### 2. resource owner : 등록한 애플리케이션에서 식별 가능한 secret key를 받음
 #### 3. application: 사용자를 대신해 서비를 호출
 #### 4. OAuth2 authentication server : application과 소비되는 서비스 사이의 중개자
+
+<br/>
+<br/>
+
+## OAuth2의 Grant Type
+#### 1. Password
+#### 2. Client credential
+#### 3. Authorization code
+#### 4. implicit
+
 <br/>
 <br/>
 
