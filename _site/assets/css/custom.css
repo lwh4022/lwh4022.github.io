@@ -2,6 +2,13 @@ img {
     border-style: none;
   }
   
-img.post-image, img.page-img {
-    width: 100%;
+img.post-image{
+  display:block;
+  margin: 0px auto;
+  width:70%;
   }
+img.post-image-archive{
+  display:block;
+  margin: 0px auto;
+  width:70%;
+}
