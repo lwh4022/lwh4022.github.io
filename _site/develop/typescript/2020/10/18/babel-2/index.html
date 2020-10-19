@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Maymanko&#39;s blog
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+      
+        <link rel="stylesheet" href="/assets/css/post.css">
+      
+      
+      
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Babel#2 - 사용 가이드" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Babel 공식문서를 번역하면서 바벨 공부를 시작합니다 // Guides" />
+<meta property="og:description" content="Babel 공식문서를 번역하면서 바벨 공부를 시작합니다 // Guides" />
+<link rel="canonical" href="http://localhost:4000/develop/typescript/2020/10/18/babel-2/" />
+<meta property="og:url" content="http://localhost:4000/develop/typescript/2020/10/18/babel-2/" />
+<meta property="og:site_name" content="Maymanko’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-18T00:00:00+09:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","datePublished":"2020-10-18T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/develop/typescript/2020/10/18/babel-2/"},"url":"http://localhost:4000/develop/typescript/2020/10/18/babel-2/","description":"Babel 공식문서를 번역하면서 바벨 공부를 시작합니다 // Guides","headline":"Babel#2 - 사용 가이드","dateModified":"2020-10-18T00:00:00+09:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+  </head>
+  
+  <body style="font-family: 'Noto Sans KR', sans-serif;">
+    <header>
+      <nav class="top-nav hide-on-large-only">
+        <div class="nav-wrapper" style="background-color: #000000; background-image: url('/assets/images/black-felt.png')">
+          <div class="container">
+            <a class="page-title" href="/">Maymanko's blog</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-target="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color: #000000; background-image: url('/assets/images/black-felt.png');">
+        <li>
+          <h4 class="center-align" style="font-weight: bold;"><a class="white-text page-title" href="/">Maymanko's blog</a></h4>
+          <img class="circle z-depth-2 responsive-img" style="display:block; margin-left:auto; margin-right:auto; margin-top:20px; margin-bottom:20px; height:100px;" src="/assets/images/logo.jpeg"/>
+        </li>
+        
+        
+          <li>
+            <a class="waves-effect" href="/develop" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">code</i>
+              Develop
+                
+              
+                
+                  <span style="font-size: 1.05rem;">(27)</span>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+              <li>
+                <a class="waves-effect" href="/develop/ddd" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  DDD
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(4)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/msa" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  MSA
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(7)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/docker" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Docker
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(1)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/react" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  React
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(2)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/typescript" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Typescript
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(4)</span>
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/electron" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Electron
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(1)</span>
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/rabbitmq" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  RabbitMQ
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a class="waves-effect" href="/develop/etc" style="color:white;margin-left:40px;height:30px;line-height: 30px;font-size:1.15em">
+                  Etc
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                  
+                    
+                      <span style="font-size: 1.05rem;">(5)</span>
+                    
+                  
+                    
+                  
+                </a>
+              </li>
+            
+          </ul>
+        
+          <li>
+            <a class="waves-effect" href="/life" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">edit</i>
+              Life
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+          </ul>
+        
+          <li>
+            <a class="waves-effect" href="/vietnam" style="color:white;font-size: 1.5em;">
+              <i class="material-icons" style="color:white;margin-right:16px;">public</i>
+              Vietnam
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </a>
+          </li>
+          <ul>
+            
+          </ul>
+        
+      </ul>
+      
+    </header>
+    <main>
+
+
+<div class="container">
+  <div id="post-info">
+  <h3>Babel#2 - 사용 가이드</h3>
+  
+</div>
+<div class="divider"></div>
+<div class="row">
+  <div class="col s12 markdown-body">
+    <p><img src="/assets/images/babel-logo.svg" width="50%" style="display:block; margin:0 auto; margin-top:1em" /></p>
+
+<h2 id="순서">순서</h2>
+<ul>
+<li style="font-size:1.1em; font-family: 'Noto Sans KR', sans-serif;">바벨이란</li>
+<li style="font-size:1.1em; font-family: 'Noto Sans KR', sans-serif;">사용 가이드</li>
+<li style="font-size:1.1em; font-family: 'Noto Sans KR', sans-serif;">바벨 설정</li>
+<li style="font-size:1.1em; font-family: 'Noto Sans KR', sans-serif;">바벨 7로 업그레이드</li>
+<li style="font-size:1.1em; font-family: 'Noto Sans KR', sans-serif;">바벨 7로 업그레이드 (API)</li>
+</ul>
+<p><br /></p>
+
+<h2 id="사용가이드">사용가이드</h2>
+<p>      최종 사용자로서 또는 바벨 플러그인을 개발 하는데 바벨을 쉽게 사용할 수 있도록 많은 바벨 툴체인들이 있습니다.<br /> 
+      아래 내용은 툴들에 대한 간단한 소개이며 문서 항목 중 “사용법” 섹션에서 더 많은 정보를 얻을 수 있습니다.</p>
+
+<blockquote style="margin-left:25px">
+만약 프레임워크를 사용한다면, 바벨을 구성하는 일은 다를 수 있거나 이미 구성되어 있을 수 있습니다.<br />
+대신 Interactive 셋업 가이드를 참고 해보세요
+</blockquote>
+
+<h3 id="ⅰ-들어가기">Ⅰ. 들어가기</h3>
+<p>      이 가이드는 최신 브라우저들에서 ES2015+ 구문들을 사용하는 Javascript 애플리케이션을 어떻게 컴파일 하는지 알려줍니다.<br />
+      구성을 위한 전 과정을 아래 사항들을 포함합니다.
+<br /></p>
+
+<h4 id="1-패키지를-설치하기-위해-아래-명령어를-실행하세요">1. 패키지를 설치하기 위해 아래 명령어를 실행하세요</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> @babel/core @babel/cli @bable/preset-env
+npm <span class="nb">install</span> <span class="nt">--save</span> @babel/polyfill
+</code></pre></div></div>
+
+<h4 id="2-babelconfigjson-설정-파일을-프로젝트-루트에-만들고-아래-내용을-입력하세요">2. babel.config.json 설정 파일을 프로젝트 루트에 만들고, 아래 내용을 입력하세요</h4>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"@babel/env"</span><span class="p">,</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"targets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"edge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"firefox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"safari"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.1"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"useBuiltIns"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"corejs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.6.4"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<blockquote style="margin-left:20px">
+위 브라우저 리스트는 임의의 샘플입니다. 브라우저에 맞게 수정이 필요합니다.
+</blockquote>
+
+<h4 id="3-아래-커맨드를-실행해-src-디렉터리에서-lib-디렉터리로-모든-코드를-컴파일-하세요">3. 아래 커맨드를 실행해 “src” 디렉터리에서 “lib” 디렉터리로 모든 코드를 컴파일 하세요</h4>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/.bin/babel src <span class="nt">--out-dir</span> lib
+</code></pre></div></div>
+
+<blockquote style="margin-left:20px">
+npm@5.2.0의 패키지 러너를 통해 ./node_modules/.bin/babel을 <code>npx babel</code>로 바꾸어 코드를 짧게 할 수 있습니다.
+</blockquote>
+
+<p>      바벨의 동작방식에 대한 설명을 한 단계씩 밟아가면서 각각의 툴들의 소개를 읽어보세요</p>
+
+<h3 id="ⅱ-cli-기본-사용법">Ⅱ. CLI 기본 사용법</h3>
+<p>      모든 바벨 모듈은 npm 패키지 내 <code>@babel</code>(7 버전 이후) 아래에 나뉘어 있습니다.<br />
+      이러한 모듈 방식의 설계는 다양한 케이스에 적용이 가능합니다. 여기서는 <code>@babel/core</code>와 <code>@babel/cli</code>를 살펴볼 것입니다.</p>
+
+<h4 id="1-코어-라이브러리">1. 코어 라이브러리</h4>
+
+<p>      바벨의 코어 함수들은 <code>@babel/core</code>에 속해 있습니다. 아래와 같이 설치 후</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> @babel/core
+</code></pre></div></div>
+<p>       Javascript 프로그램에 직접 <code>require</code>를 삽입해, 아래와 같이 사용 가능합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">babel</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">@babel/core</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">babel</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">,</span> <span class="nx">optionsObject</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>       일반 사용자들은 <code>@babel/core</code>에 대한 인터페이스를 제공하는 다른 툴들을 설치해 개발 프로세스에 접목하길 원할 수 있습니다.<br />
+       그럼에도 다른 툴들에서 이미 세팅되어 있는 옵션들에 대한 문서를 확인하고 싶으면 해당 문서를 확인하세요</p>
+
+<h4 id="2-cli-tool">2. CLI tool</h4>
+<p>      <code>@babel/cli</code>는 터미널로 바벨을 사용하는 툴입니다. 아래 예시는 설치 커맨드와 기본 사용 예시 입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> @babel/corfe @babel/cli
+./node_modules/.bin/babel src <span class="nt">--out-dir</span> lib
+</code></pre></div></div>
+
+<p>       위 명령어는 src 디렉터리 내 Javascript 파일들을 파싱하여 옵션대로 변경을 적용하여, 각각의 출력 파일을 <code>lib</code>디렉터리에 저장합니다. <br />
+      아직 예시에서는 변경을 적용하지 않아, 출력 코드는 입력 코드와 일치합니다(코드 스타일은 유지되지 않습니다.) 옵션을 적용하면 파싱 및 변경이 가능합니다.
+<br />
+      위 예시는 <code>--out-dir</code>를 사용했습니다. <code>--help</code>를 통해 적용 가능한 다른 옵션들을 확인할 수 있습니다. 현재 우리에게 가장 중요한 것은 <code>--plugins</code>와 <code>--presets</code>입니다.</p>
+
+<h3 id="ⅲ-플러그인과-프리셋">Ⅲ. 플러그인과 프리셋</h3>
+<p>       플러그인은 바벨에게 어떻게 코드 변경을 수행할지 명령합니다.<br />
+       직접 만든 플러그인을 통해 코드 변경을 수행하는 것도 가능합니다.<br />
+       ES2015+ 구문을 ES5형태로 바꾸기 위해 <code>@babel/plugin-transform-arrow-functions</code>와 같은 공식 플러그인을 사용할 수 있습니다.<br /></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> @babel/plugin-transform-arrow-functions
+
+./node_modules/.bin/babel src <span class="nt">--out-dir</span> lib <span class="nt">--plugins</span><span class="o">=</span>@babel/plugin-transform-arrow-functions
+</code></pre></div></div>
+<p>       이제 애로우 function은 ES5와 호환가능한 function 구문으로 변경될 것입니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fn</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// converted to</span>
+
+<span class="kd">var</span> <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fn</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>       다른 ES2015+ 기능을 사용하길 원할 수 있습니다. 그땐 플러그인을 하나씩 넣는 대신에 이미 만들어진 플러그인 세트인 “프리셋”을 사용할 수 있습니다.
+<br /></p>
+
+<p>       기존 플러그인 처럼, 필요한 여러 플러그인 조합을 통해 자신만의 프리셋도 만들수 있습니다.<br />
+       여기서는 <code>env</code>라는 훌륭한 프리셋을 사용할 것입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save-dev</span> @babel/preset-env
+./node_modules/.bin/babel src <span class="nt">--out-dir</span> lib <span class="nt">--presets</span><span class="o">=</span>@babel/env
+</code></pre></div></div>
+<p>       어떠한 설정도 없이, 이 프리셋은 모던 Javascript(ES2015, ES2016 등)을 지원합니다. 그리고 옵션도 사용가능하빈다. 터미널에서 cli와 프리셋 옵션을 실행하기 전에, 아래에 있는 다른 옵션도 확인해보세요</p>
+
+<h3 id="ⅸ-플러그인과-프리셋">ⅸ. 플러그인과 프리셋</h3>
+<blockquote style="margin-left:20px">
+필요에 따라 설정을 사용하는 다양한 방법이 있습니다. <code>바벨 설정</code>에서 깊이 있는 가이드를 읽어보세요
+</blockquote>
+
+<p>       그러면 아래와 같이 <code>babel.config.json</code> 파일을 만들어 봅시다</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"@babel/env"</span><span class="p">,</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"targets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"edge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firefox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"safari"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>       현재 <code>env</code> 프리셋은 타겟 브러우저가 지원하지 않는 기능들을 변경하는 것만들을 수행할 것입니다. 그리고 폴리필을 봅시다.</p>
+
+<h3 id="ⅴ-폴리필">Ⅴ. 폴리필</h3>
+
+<blockquote>
+  <p>바벨 7.4버전을 기점으로 ECMAScript 기능을 폴리필 하기 위한 <code>core-js/stable</code>과 generator functions을 트랜스파일 하기 위한 <code>regenerator-runtime/&gt; runtime</code>사용으로 <code>@babel/polyfill</code> deprecated 되었습니다.</p>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">core-js/stable</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">regenerator-runtime/runtime</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<p>       <code>@babel/polyfill</code> 모듈은 ES2015+ 환경을 모두 지원하기 위해 <code>core-js</code>와 커스컴 regenerator runtime을 포함합니다.
+<br /></p>
+
+<p>       이를 통해 <code>Promise</code>나 <code>WeakMap</code> 같은 새로운 기능을 사용할 수 있으며, <code>Array.from</code>이나 <code>Object.assgin</code>와 같은 스태틱 메소드, <br />
+      <code>Array.prototype.includes</code>와 같은 인스턴스 메소드, 그리고 regenerator 플러그인을 통해 generator function들을 사용 할 수 있습니다.
+<br /></p>
+
+<p>       만약에 <code>Array.prototype.includes</code>같은 인스턴스 메소드를 사용하고 싶지 않다면,<br /> 
+       <code>@babel/polyfill</code> 대신 <code>transform runtime</code> 플러그인을 사용해 전역을 변경하지 않고 사용할 수 있습니다.</p>
+
+<p>       더 나아가, 만약 어떤 폴리필 기능들을 사용하고 싶은지 알고 싶다면, <code>core-js</code>을 바로 확인 하세요</p>
+
+<p>       여기서는 단순히 <code>@babel/polyfill</code>을 설치할 것입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--save</span> @babel/polyfill
+</code></pre></div></div>
+<blockquote style="margin-left:20px">
+폴리필은 소스코드를 실행하기 전에 수행되어야 함으로 <code>--save-dev</code> 대신 <code>--save</code>를 쓴 것에 주의하세요
+</blockquote>
+
+<p>       여기서는 <code>"useBuiltins": "usage"</code>옵션을 사용해<code>env</code> 프리셋을 사용하기 때문에, 위에 있는대로 최신 최적화를 수행할 것입니다.
+<br /> 
+       아래 옵션으로 변경해보세요</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"@babel/env"</span><span class="p">,</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"targets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"edge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"firefox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"chrome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"67"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"safari"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.1"</span><span class="p">,</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"useBuiltIns"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usage"</span><span class="p">,</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>       이제 바벨은 타겟 브러우저에 없는 기능들을 찾아서, 명령한 폴리필을 수행할 것입니다.
+&lt;/br&gt;
+       예를 들면 아래와 같습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">finllay</span><span class="p">();</span>
+</code></pre></div></div>
+<p>       위 코드를 아래와 같이 수정합니다.(Edge17은 <code>Promise.prototype.finally</code>가 없습니다.)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">core-js/modules/es.promise.finally</span><span class="dl">'</span><span class="p">);</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="k">finally</span><span class="p">();</span>
+</code></pre></div></div>
+<p>       만약에 <code>env</code> 프리셋에 <code>"useBuiltIns":"usage"</code> 옵션을 사용하지 않았다면, 다른 코드 시작 전에 한번만 요청하면 됩니다.</p>
+
+
+  </div>
+</div>
+</div>
